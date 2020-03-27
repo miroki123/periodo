@@ -1,0 +1,64 @@
+<h1 id="tableLabel">Simulador de Período</h1>
+
+<div *ngIf="done" class="alert alert-success" role="alert">Sucesso! Entre na aba Notas para ver o resultado.</div>
+
+<div *ngIf="loading" class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<form>
+
+  <div class="container" *ngIf="showForm">
+
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label for="turmas">Turmas</label>
+        <input type="number" (change)="edit($event.target)" class="form-control" id="turmas" name="turmas" />
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="alunos">Alunos por Turma</label>
+        <input type="number" (change)="edit($event.target)" class="form-control" id="alunos" name="alunos" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-2">
+        <label for="total_materias">Materias</label>
+        <input type="number" (change)="totalMaterias($event.target.value)" class="form-control" id="total_materias" name="total_materias" />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" *ngFor="let m of materias">
+        <div class="form-group col-md-4">
+          <label for="{{m.id}}">Materia</label>
+          <input type="text" (change)="editMateria($event.target)" class="form-control" id="{{m.id}}" name="nome" />
+        </div>
+
+        <div class="form-group col-md-2">
+          <label for="{{m.id}}">Peso 1</label>
+          <input type="number" (change)="editMateria($event.target)" class="form-control" id="{{m.id}}" name="peso1" />
+        </div>
+
+        <div class="form-group col-md-2">
+          <label for="{{m.id}}">Peso 2</label>
+          <input type="number" (change)="editMateria($event.target)" class="form-control" id="{{m.id}}" name="peso2" />
+        </div>
+
+        <div class="form-group col-md-2">
+          <label for="{{m.id}}">Peso 3</label>
+          <input type="number" (change)="editMateria($event.target)" class="form-control" id="{{m.id}}" name="peso3" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-2">
+        <input class="form-control" type="button" value="Simular" (click)="simulate()" />
+      </div>
+    </div>
+
+  </div>
+
+</form>
