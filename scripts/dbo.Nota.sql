@@ -15,7 +15,10 @@ CREATE TABLE [dbo].[Nota] (
     [Nota2]     FLOAT (53) NULL,
     [Nota3]     FLOAT (53) NULL,
     [Nota4]     FLOAT (53) NULL,
-    [TurmaID]   INT        NOT NULL
+    [TurmaID]   INT        NOT NULL,
+    PRIMARY KEY CLUSTERED ([TurmaID] ASC, [MateriaID] ASC, [AlunoID] ASC),
+    CONSTRAINT [FK_NotaAluno] FOREIGN KEY ([AlunoID]) REFERENCES [dbo].[Aluno] ([ID]),
+    CONSTRAINT [FK_NotaMateria] FOREIGN KEY ([MateriaID]) REFERENCES [dbo].[Materia] ([ID]),
+    CONSTRAINT [FK_NotaTurma] FOREIGN KEY ([TurmaID]) REFERENCES [dbo].[Turma] ([ID])
 );
-
 
