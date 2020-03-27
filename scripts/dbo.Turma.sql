@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[Turma] (
     [ID]         INT          NOT NULL,
     [Nome]       VARCHAR (20) NOT NULL,
     [DataInicio] DATETIME     NOT NULL,
-    [DataFim]    DATETIME     NOT NULL
+    [DataFim]    DATETIME     NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
 );
-
 
