@@ -12,7 +12,8 @@ CREATE TABLE [dbo].[Aluno] (
     [ID]             INT          NOT NULL,
     [Nome]           VARCHAR (80) NULL,
     [DataNascimento] DATETIME     NOT NULL,
-    [TurmaID]        INT          NOT NULL
+    [TurmaID]        INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FK_AlunoTurma] FOREIGN KEY ([TurmaID]) REFERENCES [dbo].[Turma] ([ID])
 );
-
 
