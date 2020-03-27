@@ -14,7 +14,8 @@ CREATE TABLE [dbo].[Materia] (
     [Peso1]   FLOAT (53)   NOT NULL,
     [Peso2]   FLOAT (53)   NOT NULL,
     [Peso3]   FLOAT (53)   NOT NULL,
-    [TurmaID] INT          NOT NULL
+    [TurmaID] INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FK_MateriaTurma] FOREIGN KEY ([TurmaID]) REFERENCES [dbo].[Turma] ([ID])
 );
-
 
